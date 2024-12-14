@@ -1,0 +1,105 @@
+/* Estilo geral do corpo */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #2e3a87, #0c1428);
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffda79;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Tabuleiro do jogo */
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas de mesmo tamanho */
+  grid-gap: 10px; /* Espaço entre as células */
+  width: 310px;
+  margin: 0 auto;
+  background-color: #1c2541;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra ao redor do tabuleiro */
+}
+
+/* Células do jogo */
+.cell {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ff7b54, #ffb562); /* Gradiente nas células */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito ao passar o mouse sobre as células */
+.cell:hover {
+  transform: scale(1.1); /* Aumenta a célula ligeiramente */
+  background: linear-gradient(135deg, #ffb562, #ff7b54); /* Inverte o gradiente */
+}
+
+/* Células já ocupadas */
+.cell.taken {
+  cursor: not-allowed;
+  opacity: 0.6; /* Reduz opacidade para células marcadas */
+}
+
+/* Painel de status */
+#status {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #ffda79;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botão de reinício */
+#restart {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ff5e57, #d72638);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#restart:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #d72638, #ff5e57);
+}
+
+/* Efeito ao pressionar o botão */
+#restart:active {
+  transform: scale(0.95);
+}
+
+/* Células vencedoras */
+.cell.winner {
+  background: linear-gradient(135deg, #4CAF50, #2e7d32); /* Destaca células vencedoras */
+  color: #fff;
+  font-size: 2.7rem;
+  transition: background 0.3s ease, color 0.2s ease;
+}
